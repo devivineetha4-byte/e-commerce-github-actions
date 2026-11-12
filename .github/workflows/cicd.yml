@@ -5,7 +5,7 @@ on:
   push:
 
 jobs:
-#CI
+  #CI
   code:
     runs-on: ubuntu-latest
     steps:
@@ -24,7 +24,7 @@ jobs:
       - name: Test the Application
         run: echo "Test Passed"
 
-   #CD     
+    #CD     
   deploy:
     needs: [code,build,test]
     runs-on: ubuntu-latest
