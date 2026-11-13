@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Show plain text env
       
-        run: echo"My name is  ${{env.NAME}}"
+        run: echo "My name is  ${{env.NAME}}"
       
