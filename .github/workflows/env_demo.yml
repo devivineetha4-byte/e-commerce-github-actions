@@ -26,5 +26,5 @@ jobs:
         run: echo "One fun secret is ${{secrets.MY_SECRET}}"
       - name: Show Variables
         run: echo "My Dockerhub username is ${{vars.DOCKERHUB_USERNAME}}" 
-      - name: Show the input env:
+      - name: Show the input env
         run: echo "The selected env is ${{inputs.environment }}"
