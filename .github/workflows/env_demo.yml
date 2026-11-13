@@ -8,9 +8,9 @@ on:
         default: 'dev'
         type: choice
         options:
-          -dev
-          -stg
-          -prd
+          - dev
+          - stg
+          - prd
           
 
 env:
