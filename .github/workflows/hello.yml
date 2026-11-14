@@ -4,8 +4,9 @@
 name: Hello
 # When the worklow runs
 on:
-  push: 
-    branches: [main]
+ # push: 
+ #  branches: [main]
+  workflow_dispatch:
 # What the workflow does
 jobs:
 # Name of your workflows
