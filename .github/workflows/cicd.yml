@@ -1,36 +1,22 @@
-# Goal: To build a CI/CD pipeline (just dummy)
-name: CICD Demo
-
+#Goal : To run the continuous integration workflow for the e-commerce project
+name: CI
 on:
-#  push:
-  workflow_dispatch:
-
+  push:
+    
 
 jobs:
-  #CI
+  # Code
   code:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone the code
-        uses: actions/checkout@v4
-  build:
-    needs: code
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build the code with Docker
-        uses: docker/setup-buildx-action@v3
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test the Application
-        run: echo "Test Passed"
+    uses: ./.github/workflows/lint-and-test.yml
 
-    #CD     
+  # Build     
+  build-and-push:
+    needs: code
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
+
+   # Deploy
   deploy:
-    needs: [code,build,test]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy the Application on Server
-        run: echo "Application Deployed"
-  
+     needs: [code,build-and-push]
+     uses: ./.github/workflows/CD.yml
+     secrets: inherit 

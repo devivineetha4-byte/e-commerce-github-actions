@@ -3,8 +3,9 @@
 name: CD
 
 on:
-  workflow_dispatch:
-
+  workflow_call:
+    
+    
 jobs:
   deploy:
     runs-on: self-hosted
@@ -16,4 +17,4 @@ jobs:
 
       - name: Run Docker container
         run: |
-          whoami && docker compose up -d  
+          whoami && docker compose up -d
