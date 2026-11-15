@@ -21,4 +21,18 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      
+      - name: Setup QEMU 
+        uses: docker/setup-qemu-action@v4 
+
+
+      - name: Set UP Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+
+      - name: Build and Push 
+        uses: docker/build-push-action@v7 
+        with:
+       
+          push: true
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/e-commerce-python:latest
+        
