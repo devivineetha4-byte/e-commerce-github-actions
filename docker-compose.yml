@@ -1,0 +1,6 @@
+services:
+  app:
+    build: .
+    image: devivineetha4-byte/e-commerce-python:latest
+    ports:
+      - "80:80"
