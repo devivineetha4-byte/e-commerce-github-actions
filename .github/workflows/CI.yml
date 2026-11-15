@@ -6,10 +6,11 @@ on:
 
 jobs:
   code-lint:
-    uses: ./.github/workflows/lint & test.yml 
+    uses: ./.github/workflows/lint-and-test.yml
 
   build-and-push:
     needs: code-lint
-    uses: ./.github/workflows/docker.yml 
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
 
     
