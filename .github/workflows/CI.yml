@@ -1,0 +1,15 @@
+#Goal : To run the continuous integration workflow for the e-commerce project
+name: CI
+on:
+  push:
+    
+
+jobs:
+  code-lint:
+    uses: ./.github/workflows/lint & test.yml 
+
+  build-and-push:
+    needs: code-lint
+    uses: ./.github/workflows/docker.yml 
+
+    
