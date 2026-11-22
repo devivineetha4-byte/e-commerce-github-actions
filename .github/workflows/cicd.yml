@@ -1,7 +1,7 @@
 #Goal : To run the continuous integration workflow for the e-commerce project
 name: CI
 on:
-  push:
+  workflow_dispatch:
     
 
 jobs:
