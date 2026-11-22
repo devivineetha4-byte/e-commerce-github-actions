@@ -12,9 +12,12 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0  
 
       - name: SonarQube ServerScan
         uses: sonarsource/sonarqube-scan-action@v5
         env:
+        
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST: ${{ secrets.SONAR_HOST }}
