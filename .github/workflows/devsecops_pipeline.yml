@@ -32,10 +32,10 @@ jobs:
 
 
   # Build     
-  #build-and-push:
-  # needs: code
-  #  uses: ./.github/workflows/docker.yml
-  #  secrets: inherit
+  build-and-scan:
+    needs: code
+    uses: ./.github/workflows/trivy_scans.yml
+    secrets: inherit
 
    # Deploy
   #deploy:
