@@ -21,7 +21,7 @@ jobs:
           python-version: ${{ matrix.python-versions }}
 
       - name: Dependency Scan for Pip
-        uses: pypa/gh-action-pip-audit@v1   
+        uses: pypa/gh-action-pip-audit@v1.0.0  
         
 
         
