@@ -18,7 +18,7 @@ jobs:
 
 # Scan the running application with OWASP ZAP Baseline Scan
       - name: OWASP ZAP Baseline Scan
-        uses: zaproxy/action-baseline@v0.6.0
+        uses: zaproxy/action-baseline@v0.15.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           target: 'http://${{ secrets.EC2_HOST }}'  
