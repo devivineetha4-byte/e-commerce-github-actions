@@ -28,6 +28,23 @@ jobs:
       - name: Dependency Scan for Pip
         run: |
           pip-audit -r requirements.txt 
-        
+      
+      - name: Depcheck
+        uses: dependency-check/Dependency-check_Action@main
+        id: Depcheck
+        with:
+          project: 'test'
+          path: '.'
+          format: 'HTML'
+          out: 'reports'
+          args: >
+             --failOnCVSS 7
+             --enableRetired
+
+      - name: Upload Results
+        uses: actions/upload-artifact@master
+        with:
+          name: Depcheck report
+          path: ${{ github.workspace }}/reports
 
         
